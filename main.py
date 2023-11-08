@@ -1,8 +1,15 @@
 from fastapi import FastAPI
+
+from contacts.contacts import contacts_router
+from discussions.discussions import discussions_router
+from messages.messages import message_router
 from users.users import users_router
 
 app = FastAPI()
 app.include_router(users_router)
+app.include_router(contacts_router)
+app.include_router(discussions_router)
+app.include_router(message_router)
 
 @app.get("/")
 def read_root():

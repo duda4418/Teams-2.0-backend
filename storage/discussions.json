@@ -1,0 +1,50 @@
+{
+  "0d77ac5c-0f33-4f70-8396-a7da74107a78": {
+    "id": "0d77ac5c-0f33-4f70-8396-a7da74107a78",
+    "contacts": [
+      "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8",
+      "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8"
+    ],
+    "name": "David Serban"
+  },
+  "7bd13f8e-82f0-4496-ad9c-53e68fe2fa6b": {
+    "id": "7bd13f8e-82f0-4496-ad9c-53e68fe2fa6b",
+    "contacts": [
+      "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8",
+      "3975a8ac-5ca8-4405-8817-cd123a30d6d7"
+    ],
+    "name": null
+  },
+  "fdb31394-50ac-43f3-a3fc-c30f46cb8af5": {
+    "id": "fdb31394-50ac-43f3-a3fc-c30f46cb8af5",
+    "contacts": [
+      "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8",
+      "3c72b108-fabe-44fb-88c5-5b74527c706f"
+    ],
+    "name": null
+  },
+  "4183ccb6-30a9-42d8-9ab9-cc54ba633c33": {
+    "id": "4183ccb6-30a9-42d8-9ab9-cc54ba633c33",
+    "contacts": [
+      "2fa0d2b3-a97f-496d-a312-5e53df1b33c9",
+      "3975a8ac-5ca8-4405-8817-cd123a30d6d7"
+    ],
+    "name": null
+  },
+  "a2183648-ea85-40e2-94fb-48b9a0e7fce5": {
+    "id": "a2183648-ea85-40e2-94fb-48b9a0e7fce5",
+    "contacts": [
+      "2fa0d2b3-a97f-496d-a312-5e53df1b33c9",
+      "3c72b108-fabe-44fb-88c5-5b74527c706f"
+    ],
+    "name": null
+  },
+  "f1e7c2de-8c9e-4b29-8eda-cda1c40011a1": {
+    "id": "f1e7c2de-8c9e-4b29-8eda-cda1c40011a1",
+    "contacts": [
+      "2fa0d2b3-a97f-496d-a312-5e53df1b33c9",
+      "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8"
+    ],
+    "name": null
+  }
+}

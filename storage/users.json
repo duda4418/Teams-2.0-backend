@@ -1,1 +1,22 @@
-{"d5e2f6e8-0083-43b0-b6df-a91ec81d74b1": {"name": "David", "password": "test123", "id": "d5e2f6e8-0083-43b0-b6df-a91ec81d74b1"}, "1304a893-1a02-477e-ae80-a04e6ec1058c": {"name": "David R", "password": "test123", "id": "1304a893-1a02-477e-ae80-a04e6ec1058c"}}
+{
+  "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8": {
+    "name": "David Serban",
+    "password": "test123",
+    "id": "bc551145-0db6-4d0b-bbc5-e4f2f6e88ed8"
+  },
+  "3975a8ac-5ca8-4405-8817-cd123a30d6d7": {
+    "name": "Vlad",
+    "password": "test123",
+    "id": "3975a8ac-5ca8-4405-8817-cd123a30d6d7"
+  },
+  "3c72b108-fabe-44fb-88c5-5b74527c706f": {
+    "name": "Duda",
+    "password": "test123",
+    "id": "3c72b108-fabe-44fb-88c5-5b74527c706f"
+  },
+  "2fa0d2b3-a97f-496d-a312-5e53df1b33c9": {
+    "name": "david",
+    "password": "password",
+    "id": "2fa0d2b3-a97f-496d-a312-5e53df1b33c9"
+  }
+}
