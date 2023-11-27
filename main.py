@@ -4,6 +4,9 @@ from contacts.contacts import contacts_router
 from discussions.discussions import discussions_router
 from messages.messages import message_router
 from users.users import users_router
+from starlette.websockets import WebSocket, WebSocketDisconnect
+
+from websocket_manager.manager import ConnectionManager
 
 app = FastAPI()
 app.include_router(users_router)
@@ -11,9 +14,20 @@ app.include_router(contacts_router)
 app.include_router(discussions_router)
 app.include_router(message_router)
 
-@app.get("/")
-def read_root():
-    return{"Hello":"World"}
+websocket_manager = ConnectionManager()
+
+@app.websocket("/ws/{client_id}")
+async def websockets_endpoint(websocket: WebSocket, client_id: str):
+    await websocket_manager.connect(websocket, client_id)
+    #websocket_manager.status()
+    try:
+        while True:
+            message = await websocket.receive_text()
+            #await websocket_manager.broadcast(message, [client_id])
+    except WebSocketDisconnect:
+        await websocket_manager.disconnect(websocket, client_id)
+        #websocket_manager.status()
+
 
 if __name__ == "__main__":
     import uvicorn
