@@ -1,4 +1,6 @@
 from starlette.websockets import *
+from websockets import broadcast
+
 
 class SingletonMeta(type):
 
@@ -20,16 +22,12 @@ class ConnectionManager(metaclass = SingletonMeta):
 
     async def disconnect(self, websocket: WebSocket, client_id):
         self.active_connections.pop(client_id)
-        print(self.active_connections)
 
     async def broadcast(self, message, contacts):
         for contact in contacts:
             connection = self.active_connections.get(contact)
             if connection:
                 await connection.send_json(message)
-                #await connection.send_json(self.active_connections)
 
-    '''async def status(self):
-        for connection in self.active_connections.values():
-            if connection:
-                await connection.send_json(list(self.active_connections.keys()))'''
+    async def status(self):
+        await broadcast(self, "offline")
