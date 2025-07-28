@@ -3,7 +3,7 @@ from fastapi import APIRouter
 
 from discussions.models import Discussions
 from discussions.utils import get_contact_discussions, create_new_discussion, get_discussions, remove_duplicate_contacts
-from storage.real_db import db
+from storage.SQLite.real_db import db
 
 discussions_router = APIRouter()
 

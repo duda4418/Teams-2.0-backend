@@ -5,14 +5,15 @@ from discussions.discussions import discussions_router
 from messages.messages import message_router
 from users.users import users_router
 from starlette.websockets import WebSocket, WebSocketDisconnect
-
 from websocket_manager.manager import ConnectionManager
+from websocket_manager.status import status_router
 
 app = FastAPI()
 app.include_router(users_router)
 app.include_router(contacts_router)
 app.include_router(discussions_router)
 app.include_router(message_router)
+app.include_router(status_router)
 
 websocket_manager = ConnectionManager()
 

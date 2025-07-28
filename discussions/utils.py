@@ -1,6 +1,6 @@
 from collections import Counter
 from uuid import uuid4
-from storage.real_db import db
+from storage.SQLite.real_db import db
 
 
 def get_contact_discussions(discussion_data):

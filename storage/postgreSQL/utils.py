@@ -1,4 +1,4 @@
-from storage.db_models import User, Discussion, Message
+from storage.postgreSQL.db_models import User, Discussion, Message
 
 def create_user(session, name, password, user_id):
     obj = User(name=name, password=password, id=user_id)

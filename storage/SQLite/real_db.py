@@ -1,16 +1,17 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from storage.db_models import User, Discussion, Message, Base
-import psycopg2
-from storage.utils import get_users, get_discussions, get_messages, create_user, create_discussion, create_message
+from storage.SQLite.db_models import User, Discussion, Message, Base
+from storage.SQLite.utils import get_users, get_discussions, get_messages, create_user, create_discussion, create_message
 
-engine = create_engine('postgresql://postgres:duda2004@localhost:5432/chat_app_database', echo=True)
+engine = create_engine(
+    'sqlite:///./chat_app_database.db',  # ✅ Switched from PostgreSQL to SQLite
+    echo=True,
+    connect_args={"check_same_thread": False}  # Required for SQLite multithreading with SQLAlchemy
+)
 
-with engine.connect() as connection:
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    Base.metadata.create_all(engine)
+Session = sessionmaker(bind=engine)
+session = Session()
+Base.metadata.create_all(engine)
 
 class Database:
     def __init__(self):
@@ -50,6 +51,5 @@ class Database:
     @staticmethod
     def get_messages():
         return get_messages(session=session)
-
 
 db = Database()

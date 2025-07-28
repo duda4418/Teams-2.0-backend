@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 
 from messages.models import Messages
 from messages.utils import create_new_message, get_messages_by_discussion_id
-from storage.real_db import db
+from storage.SQLite.real_db import db
 from websocket_manager.manager import ConnectionManager
 
 message_router = APIRouter()
