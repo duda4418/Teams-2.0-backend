@@ -10,8 +10,8 @@ def get_users(session):
     users = session.query(User).all()
     return User.serialize_users(users)
 
-def create_discussion(session, contacts, discussion_id):
-    obj = Discussion(contacts=contacts, id=discussion_id)
+def create_discussion(session, contacts, discussion_id, name):
+    obj = Discussion(contacts=contacts, id=discussion_id, name=name)
     session.add(obj)
     session.commit()
     return obj

@@ -29,6 +29,8 @@ This repository provides the backend API server for a chat application, designed
 - **FastAPI** for high-performance API endpoints and WebSocket integration.
 - **SQLAlchemy** for ORM-based database access and migrations.
 - **PostgreSQL** as the primary relational data store.
+- **SQLite** as the second relational data store.
+
 - **Python 3.10+** as the programming language.
 
 ## Typical Usage Flow

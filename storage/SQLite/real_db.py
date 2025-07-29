@@ -30,8 +30,8 @@ class Database:
         return get_users(session=session)
 
     @staticmethod
-    def create_discussion(contacts, discussion_id):
-        return create_discussion(session=session, contacts=contacts, discussion_id=discussion_id)
+    def create_discussion(contacts, discussion_id, name):
+        return create_discussion(session=session, contacts=contacts, discussion_id=discussion_id, name=name)
 
     @staticmethod
     def get_discussions():

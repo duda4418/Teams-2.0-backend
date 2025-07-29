@@ -11,14 +11,7 @@ def create_new_message(message_data):
 
     message_dict["id"] = message_id
 
-    time = datetime.now()
-    hour = time.hour
-    date = time.date()
-    if len(str(time.minute)) == 1:
-        minute = f"0{time.minute}"
-    else:
-        minute = time.minute
-    message_dict["time"] = f"{date}    {hour}:{minute}"
+    message_dict["time"] = datetime.now()
 
     messages[message_id] = message_dict
 
@@ -28,7 +21,6 @@ def create_new_message(message_data):
         user_id=message_dict["user_id"],
         value=message_dict["value"],
         time=message_dict["time"])
-
     return message_dict
 
 def get_messages_by_discussion_id(discussion_id):

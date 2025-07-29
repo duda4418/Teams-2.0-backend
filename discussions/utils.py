@@ -16,7 +16,16 @@ def create_new_discussion(data):
     discussion_data = data.model_dump()
     discussion_data["id"] = discussion_id
 
-    db.create_discussion(contacts=discussion_data["contacts"], discussion_id=discussion_data["id"])
+    users = db.get_users()
+    contact_ids = discussion_data["contacts"]
+    participant_names = [users.get(contact_id, {}).get("name", "") for contact_id in contact_ids]
+    discussion_data["name"] = ", ".join(participant_names)
+
+    db.create_discussion(
+        contacts=discussion_data["contacts"],
+        discussion_id=discussion_data["id"],
+        name=discussion_data["name"]
+    )
 
     return discussion_data
 
