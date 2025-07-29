@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 
 from contacts.contacts import contacts_router
 from discussions.discussions import discussions_router
@@ -9,6 +11,14 @@ from websocket_manager.manager import ConnectionManager
 from websocket_manager.status import status_router
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(users_router)
 app.include_router(contacts_router)
 app.include_router(discussions_router)
