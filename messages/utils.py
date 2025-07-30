@@ -21,6 +21,7 @@ def create_new_message(message_data):
         user_id=message_dict["user_id"],
         value=message_dict["value"],
         time=message_dict["time"])
+    message_dict["time"] = datetime.now().isoformat()
     return message_dict
 
 def get_messages_by_discussion_id(discussion_id):
