@@ -18,7 +18,6 @@ async def create_message(message_data: Messages):
         raise HTTPException(status_code=404, detail="Discussion not found")
 
     discussion_contacts = discussion.get("contacts", [])
-    print(discussion_contacts)
     if user_id not in discussion_contacts:
         raise HTTPException(status_code=404, detail="No user part in conversation")
 
