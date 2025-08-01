@@ -12,6 +12,7 @@ from websocket_manager.manager import ConnectionManager
 openai_router = APIRouter()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+OPEN_AI_ID = "6fd8304c-0e5e-4952-92e0-6214d06e675c"  # OpenAI bot user ID
 @openai_router.post("/api/openai", response_model=OpenAIChat)
 async def create_openai_response(request_data: OpenAIChat):
     discussion_id = request_data.discussion_id
@@ -44,7 +45,7 @@ async def create_openai_response(request_data: OpenAIChat):
     message_data = Messages(
         id=None,
         discussion_id= discussion_id,
-        user_id="6fd8304c-0e5e-4952-92e0-6214d06e675c", # OpenAI bot user ID
+        user_id=OPEN_AI_ID, # OpenAI bot user ID
         value=response
     )
     message_dict = create_new_message(message_data)
